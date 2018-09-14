@@ -8,10 +8,10 @@
 #import "NotificationCenter.h"
 ```
 ```
-   //NSObject+LYNotificationCenter
-    [self.notificationCenter addObserverForName:UITextFieldTextDidChangeNotification usingBlock:^(NSNotification *note) {
-        
-    }];
+//NSObject+LYNotificationCenter
+[self.notificationCenter addObserverForName:UITextFieldTextDidChangeNotification usingBlock:^(NSNotification *note) {
+
+}];
 ```
 
 ## Installation
