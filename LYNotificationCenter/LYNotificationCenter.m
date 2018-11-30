@@ -18,7 +18,7 @@
 @implementation LYNotificationCenter
 
 -(void)dealloc {
-    NSLog(@"xly--%@",@"dealloc LYNotificationCenter");
+//    NSLog(@"xly--%@",@"dealloc LYNotificationCenter");
     [self removeAllObserver];
 }
 
@@ -27,6 +27,12 @@
         self.observers = [NSMutableDictionary dictionary];
     }
     return _observers;
+}
+
+- (void)addObserverForNames:(NSArray<NSString *> *)names usingBlock:(void (^)(NSNotification *))block {
+    for (NSString *name in names) {
+        [self addObserverForName:name usingBlock:block];
+    }
 }
 
 - (void)addObserverForName:(NSString *)name usingBlock:(void (^)(NSNotification *note))block {
@@ -65,6 +71,12 @@
             }
         }
         [self.observers removeObjectForKey:name];
+    }
+}
+
+- (void)removeObserverForNames:(NSArray<NSString *> *)names {
+    for (NSString *name in names) {
+        [self removeObserverForName:name];
     }
 }
 

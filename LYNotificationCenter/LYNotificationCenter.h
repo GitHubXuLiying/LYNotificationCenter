@@ -11,7 +11,11 @@
 @interface LYNotificationCenter : NSObject
 
 - (void)addObserverForName:(NSString *)name usingBlock:(void (^)(NSNotification *note))block;
+- (void)addObserverForNames:(NSArray<NSString *> *)names usingBlock:(void (^)(NSNotification *))block;
+
 - (void)removeAllObserver;
 - (void)removeObserverForName:(NSString *)name;
+- (void)removeObserverForNames:(NSArray<NSString *> *)names;
+
 
 @end
