@@ -16,5 +16,5 @@
 
 ## Installation
 ```
-pod 'LYNotificationCenter', '~> 1.0'
+pod 'LYNotificationCenter'
 ```
